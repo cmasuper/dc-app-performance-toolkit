@@ -1,5 +1,5 @@
 from selenium_ui.jira import modules
-from extension.jira import extension_ui  # noqa F401
+from extension.jira import extension_req_launch, extension_test_suite_launch, extension_test_plan_launch, extension_traceability_launch, extension_report_launch, extension_settings_launch
 
 
 # this action should be the first one
@@ -62,9 +62,23 @@ Refer to `app/selenium_ui/jira/modules.py` for examples.
 """
 
 
-# def test_1_selenium_custom_action(jira_webdriver, jira_datasets, jira_screen_shots):
-#     extension_ui.app_specific_action(jira_webdriver, jira_datasets)
+def test_1_selenium_launch_requirement_page(jira_webdriver, jira_datasets, jira_screen_shots):
+    extension_req_launch.selenium_launch_requirement_page(jira_webdriver)
 
+def test_1_selenium_launch_test_suite_page(jira_webdriver, jira_datasets, jira_screen_shots):
+    extension_test_suite_launch.selenium_launch_test_suite_page(jira_webdriver)
+    
+def test_1_selenium_launch_test_plan_page(jira_webdriver, jira_datasets, jira_screen_shots):
+    extension_test_plan_launch.selenium_launch_test_plan_page(jira_webdriver)
+    
+def test_1_selenium_launch_traceability_page(jira_webdriver, jira_datasets, jira_screen_shots):
+    extension_traceability_launch.selenium_launch_traceability_page(jira_webdriver)
+    
+def test_1_selenium_launch_report_page(jira_webdriver, jira_datasets, jira_screen_shots):
+    extension_report_launch.selenium_launch_report_page(jira_webdriver)
+    
+def test_1_selenium_launch_settings_page(jira_webdriver, jira_datasets, jira_screen_shots):
+    extension_settings_launch.selenium_launch_settings_page(jira_webdriver)
 
 # this action should be the last one
 def test_2_selenium_z_log_out(jira_webdriver, jira_datasets, jira_screen_shots):
